@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.renren.modules.sys.dao.FrontMenuDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="io.renren.modules.sys.entity.FrontMenuEntity" id="frontMenuMap">
+        <result property="id" column="id"/>
+        <result property="menuname" column="menuName"/>
+        <result property="menuuri" column="menuUri"/>
+        <result property="parentid" column="parentId"/>
+        <result property="menutype" column="menuType"/>
+        <result property="menueparam" column="menueParam"/>
+    </resultMap>
+    <select id="queryListParentId" resultType="io.renren.modules.sys.entity.FrontMenuEntity">
+		select * from tb_menu where parent_id = #{parentid}
+	</select>
+    <select id="listOfSort" parameterType="Long" resultType="io.renren.modules.sys.entity.FrontMenuEntity">
+        select * from tb_front_menu where id != #{id} order by order_num asc
+    </select>
+
+
+</mapper>

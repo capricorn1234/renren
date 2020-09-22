@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.renren.modules.reception.dao.WebColumnDao">
+
+    <select id="getColumnList" resultType="io.renren.modules.sys.entity.ColumnEntity">
+		select * from tb_column order by columnSort
+	</select>
+
+<select id="getColumnDataList"  resultType="io.renren.modules.sys.entity.ContentsEntity">
+         select  * from  tb_contents
+</select>
+
+
+</mapper>

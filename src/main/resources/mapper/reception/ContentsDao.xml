@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.renren.modules.reception.dao.WebContentsDao">
+
+    <select id="getContent" resultType="io.renren.modules.sys.entity.ContentsEntity">
+		select * from tb_contents where id=#{id}
+	</select>
+
+</mapper>

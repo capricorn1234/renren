@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.renren.modules.reception.dao.WebClassifyDao">
+
+    <select id="getClassifyPageList" resultType="io.renren.modules.sys.entity.ContentsEntity">
+		select * from tb_contents where classifyId=#{classifyId} ORDER BY id LIMIT #{pagesize},#{pageNo}
+	</select>
+	<select id="getTotalCount" resultType="Long">
+		select count(*) from tb_contents where classifyId=#{classifyId}
+	</select>
+
+</mapper>
